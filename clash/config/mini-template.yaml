@@ -43,14 +43,55 @@ proxy-groups:
 
   - name: 默认
     type: select
-    proxies: [自动选择,直连,香港,台湾,日本,新加坡,美国,其它地区,全部节点]
+    proxies: [自动选择,直连,美国,香港,台湾,新加坡,日本,韩国,其它地区,全部节点]
 
   #分隔,下面是地区分组
+  - name: 美国
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bUS[A]?\b|America|United.*?States|美国|[^-]美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥)"
+
   - name: 香港
     type: select
     include-all: true
     exclude-type: direct
-    filter: "(?i)港|hk|hongkong|hong kong"
+    filter: "(?i:\bHK[G]?\b|Hong.*?Kong|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b|[^-]港)"
+
+  - name: 台湾
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bTW[N]?\b|Taiwan|新北|彰化|\bCHT\b|台湾|[^-]台|\bHINET\b)"
+
+  - name: 新加坡
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bSG[P]?\b|Singapore|新加坡|狮城|[^-]新)"
+
+  - name: 日本
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bJP[N]?\b|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日)"
+
+  - name: 韩国
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bK[O]?R\b|Korea|首尔|韩|韓)"
+
+  - name: 其它地区
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: "(?i)^(?!.*(?:🇺🇸|🇺🇲|\bUS[A]?\b|America|United.*?States|美国|[^-]美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇭🇰|\bHK[G]?\b|Hong.*?Kong|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b|[^-]港|🇹🇼|\bTW[N]?\b|Taiwan|新北|彰化|\bCHT\b|台湾|[^-]台|\bHINET\b|🇸🇬|\bSG[P]?\b|Singapore|新加坡|狮城|[^-]新|🇯🇵|\bJP[N]?\b|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日|🇰🇷|\bK[O]?R\b|Korea|首尔|韩|韓)).*"
+
+  - name: 全部节点
+    type: select
+    include-all: true
+    exclude-type: direct
 
 rules:
   - RULE-SET,private_ip,直连,no-resolve
