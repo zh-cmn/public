@@ -10,6 +10,8 @@ https://github.com/tindy2013/subconverter/blob/master/README-cn.md#外部配置
 
 https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash
 
+https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
+
 https://github.com/lhie1/Rules/tree/master/Surge/Surge%203/Provider
 
 https://github.com/NobyDa/Script/tree/master/Surge
