@@ -148,8 +148,6 @@ proxy-groups:
 
   - name: 香港自动
     type: url-test
-    include-all: true
-    exclude-type: direct
     url: http://clients3.google.com/generate_204
     interval: 300
     tolerance: 100
@@ -159,8 +157,6 @@ proxy-groups:
 
   - name: 美国自动
     type: url-test
-    include-all: true
-    exclude-type: direct
     url: http://clients3.google.com/generate_204
     interval: 300
     tolerance: 100
@@ -170,8 +166,6 @@ proxy-groups:
 
   - name: 台湾自动
     type: url-test
-    include-all: true
-    exclude-type: direct
     url: http://clients3.google.com/generate_204
     interval: 300
     tolerance: 100
@@ -181,8 +175,6 @@ proxy-groups:
 
   - name: 新加坡自动
     type: url-test
-    include-all: true
-    exclude-type: direct
     url: http://clients3.google.com/generate_204
     interval: 300
     tolerance: 100
@@ -192,8 +184,6 @@ proxy-groups:
 
   - name: 日本自动
     type: url-test
-    include-all: true
-    exclude-type: direct
     url: http://clients3.google.com/generate_204
     interval: 300
     tolerance: 100
@@ -203,8 +193,6 @@ proxy-groups:
 
   - name: 韩国自动
     type: url-test
-    include-all: true
-    exclude-type: direct
     url: http://clients3.google.com/generate_204
     interval: 300
     tolerance: 100
