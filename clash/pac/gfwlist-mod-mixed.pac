@@ -87,6 +87,7 @@ var rules = [
         [
             "artifacts.bitwarden.com",
             "emby.wtf",
+            "iflya321.com",
             "paradoxplaza.com",
             "paradox-interactive.com",
             "000webhost.com",
