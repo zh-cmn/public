@@ -1,0 +1,198 @@
+mixed-port: 7890
+redir-port: 7891
+tproxy-port: 1536
+allow-lan: true
+mode: rule
+geodata-mode: true
+unified-delay: true
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: dashboard
+secret: ""
+enable-process: true
+find-process-mode: strict
+#tcp-concurrent: true
+global-client-fingerprint: chrome
+
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: false
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+
+tun:
+  enable: false
+  device: tun3
+  stack: system
+  inet6-address: 
+  dns-hijack:
+    - 'any:53'
+  auto-route: true
+  auto-detect-interface: true
+
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  enhanced-mode: redir-host
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - '*'
+    - '+.lan'
+    - 'connect.rom.miui.com'
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 114.114.114.114
+    - 1.1.1.1
+    - 8.8.8.8
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://one.one.one.one/dns-query
+    - https://dns.google/dns-query
+  nameserver-policy:
+    "geosite:cn,private":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
+
+hosts:
+  'mtalk.google.com': 108.177.125.188
+
+proxies:
+  - {name: CFA, server: 127.0.0.1, port: 17891, type: socks5}
+proxy-groups:
+  - name: 代理
+    type: select
+    proxies:
+      - CFA
+      - DIRECT
+  - name: 必应
+    type: select
+    proxies:
+      - 代理
+      - DIRECT
+  - name: 其他
+    type: select
+    proxies:
+      - DIRECT
+      - 代理
+
+rule-providers:
+  LocalAreaNetwork:
+    behavior: classical # domain ipcidr
+    interval: 259200
+    path: ./rule/LocalAreaNetwork.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml"
+  UnBan:
+    behavior: classical
+    interval: 259200
+    path: ./rule/UnBan.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml"
+  GoogleFCM:
+    behavior: classical
+    interval: 259200
+    path: ./rule/GoogleFCM.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml"
+  Microsoft:
+    behavior: classical
+    interval: 259200
+    path: ./rule/Microsoft.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+  Apple:
+    behavior: classical
+    interval: 259200
+    path: ./rule/Apple.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml"
+  ProxyGFWlist:
+    behavior: classical
+    interval: 259200
+    path: ./rule/ProxyGFWlist.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml"
+  ProxyMedia:
+    behavior: classical
+    interval: 259200
+    path: ./rule/ProxyMedia.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml"
+  ChinaMedia:
+    behavior: classical
+    interval: 259200
+    path: ./rule/ChinaMedia.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaMedia.yaml"
+  ChinaDomain:
+    behavior: classical
+    interval: 259200
+    path: ./rule/ChinaDomain.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml"
+  ChinaCompanyIp:
+    behavior: classical
+    interval: 259200
+    path: ./rule/ChinaCompanyIp.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
+  Download:
+    behavior: classical
+    interval: 259200
+    path: ./rule/Download.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Download.yaml"
+
+rules:
+  - DOMAIN-SUFFIX,raw.githubusercontent.com,代理
+  - RULE-SET,LocalAreaNetwork,DIRECT
+  - RULE-SET,UnBan,DIRECT
+  - RULE-SET,GoogleFCM,DIRECT
+  - DOMAIN-SUFFIX,bing.com,必应
+  - DOMAIN-SUFFIX,msn.com,必应
+  - DOMAIN-SUFFIX,onedrive.live.com,代理
+  - DOMAIN-SUFFIX,openai.com,代理
+  - RULE-SET,Microsoft,DIRECT
+  - RULE-SET,Apple,DIRECT
+  - RULE-SET,ProxyGFWlist,代理
+  - RULE-SET,ProxyMedia,代理
+  - RULE-SET,ChinaMedia,DIRECT
+  - RULE-SET,ChinaDomain,DIRECT
+  - RULE-SET,ChinaCompanyIp,DIRECT
+  - RULE-SET,Download,DIRECT
+  
+  - AND,((NETWORK,UDP),(DST-PORT,123)),DIRECT
+  - GEOSITE,ehentai,代理
+  - GEOSITE,twitter,代理
+  - GEOSITE,youtube,代理
+  - GEOSITE,google,代理
+  - GEOSITE,telegram,代理
+  - GEOSITE,netflix,代理
+  - GEOSITE,bahamut,代理
+  - GEOSITE,spotify,代理
+
+  - GEOIP,google,代理
+  - GEOIP,netflix,代理
+  - GEOIP,telegram,代理
+  - GEOIP,twitter,代理
+
+  - GEOSITE,CN,DIRECT
+  - GEOIP,CN,DIRECT
+  - GEOIP,PRIVATE,DIRECT,no-resolve
+  - MATCH,其他
