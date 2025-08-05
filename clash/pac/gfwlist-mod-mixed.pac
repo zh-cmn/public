@@ -88,8 +88,7 @@ var rules = [
             "artifacts.bitwarden.com",
             "emby.wtf",
             "iflya321.com",
-            "paradoxplaza.com",
-            "paradox-interactive.com",
+            "modscontent.paradox-interactive.com",
             "000webhost.com",
             "030buy.com",
             "0rz.tw",
@@ -6026,3 +6025,4 @@ if (!String.prototype.endsWith) {
         return lastIndex !== -1 && lastIndex === position;
   };
 }
+
