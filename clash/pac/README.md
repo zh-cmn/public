@@ -8,8 +8,7 @@ https://github.com/gfwlist/gfwlist
 
 ~~~
 "artifacts.bitwarden.com",
-"paradoxplaza.com",
-"paradox-interactive.com",
+"modscontent.paradox-interactive.com",
 ~~~
 
 ~~~
