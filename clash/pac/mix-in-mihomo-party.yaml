@@ -1,0 +1,10 @@
+全局附加 direct
+# https://mihomo.party/docs/guide/override/yaml
++rules:
+  - PROCESS-NAME,accesser.exe,DIRECT
+
+mini 附加
+# https://mihomo.party/docs/guide/override/yaml
++rules:
+  - DOMAIN-SUFFIX,modscontent.paradox-interactive.com,🚀 节点选择
+  - DOMAIN-SUFFIX,cyfuture.dl.sourceforge.net,🇺🇲 美国节点
