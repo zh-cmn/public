@@ -1,0 +1,269 @@
+# https://wiki.metacubex.one/example/conf
+# https://github.com/MetaCubeX/meta-rules-dat
+# https://github.com/v2fly/domain-list-community/tree/master/data
+
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+
+geodata-mode: true
+geox-url:
+  geoip: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country-lite.mmdb"
+  asn: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb"
+
+proxy-providers:
+  provider1:
+    url: "订阅"
+    type: http
+    interval: 86400
+    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
+    override:
+      additional-prefix: "[provider1]"
+
+  provider2:
+    url: "订阅"
+    type: http
+    interval: 86400
+    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
+    override:
+      additional-prefix: "[provider2]"
+
+proxies: 
+  - name: "直连"
+    type: direct
+    udp: true
+
+proxy-groups:
+
+  - name: 🚀 节点选择
+    type: select
+    proxies: [🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+
+  - name: 💬 AI平台
+    type: select
+    proxies: [🇺🇲 美国节点,🚀 节点选择,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,🇭🇰 香港节点,♻️ 自动选择,📌 手动切换,DIRECT]
+
+  - name: 📺 Emby服务
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+
+  - name: 📺 巴哈姆特
+    type: select
+    proxies: [🇹🇼 台湾节点,🇭🇰 香港节点,🚀 节点选择,🇺🇲 美国节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+
+  - name: 📺 TikTok
+    type: select
+    proxies: [🇸🇬 狮城节点,🚀 节点选择,🇺🇲 美国节点,🇹🇼 台湾节点,🇯🇵 日本节点,🇰🇷 韩国节点,🇭🇰 香港节点,♻️ 自动选择,📌 手动切换,DIRECT]
+
+  - name: 🌐 国际视听
+    type: select
+    proxies: [🚀 节点选择,🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies: [DIRECT,🇭🇰 香港节点,🇹🇼 台湾节点,🚀 节点选择,🇺🇲 美国节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+
+  - name: 🔍 谷歌FCM
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+
+  - name: 🔍 谷歌服务
+    type: select
+    proxies: [🇺🇲 美国节点,🚀 节点选择,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,🇭🇰 香港节点,♻️ 自动选择,📌 手动切换,DIRECT]
+
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+
+  - name: 🛤️ 类型匹配
+    type: select
+    proxies: [🚀 节点选择,🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+
+  - name: 🐟 其他漏鱼
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇲 美国节点,🇹🇼 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+
+  - name: 🎯 全球直连
+    type: select
+    proxies: [DIRECT,🚀 节点选择,📌 手动切换,♻️ 自动选择]
+
+  #分隔,下面是地区分组
+  - name: 🇭🇰 香港节点
+    type: select
+    proxies: [♻️ 港 🇭🇰]
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bHK[G]?\b|Hong.*?Kong|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b|[^-]港)"
+
+  - name: 🇺🇲 美国节点
+    type: select
+    proxies: [♻️ 美 🇺🇲]
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bUS[A]?\b|America|United.*?States|美国|[^-]美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥)"
+
+  - name: 🇹🇼 台湾节点
+    type: select
+    proxies: [♻️ 台 🇹🇼]
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bTW[N]?\b|Taiwan|新北|彰化|\bCHT\b|台湾|[^-]台|\bHINET\b)"
+
+  - name: 🇸🇬 狮城节点
+    type: select
+    proxies: [♻️ 新 🇸🇬]
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bSG[P]?\b|Singapore|新加坡|狮城|[^-]新)"
+
+  - name: 🇯🇵 日本节点
+    type: select
+    proxies: [♻️ 日 🇯🇵]
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bJP[N]?\b|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日)"
+
+  - name: 🇰🇷 韩国节点
+    type: select
+    proxies: [♻️ 韩 🇰🇷]
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bK[O]?R\b|Korea|首尔|韩|韓)"
+
+  - name: 📌 手动切换
+    type: select
+    include-all: true
+    exclude-type: direct
+
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    tolerance: 10
+
+  - name: ♻️ 港 🇭🇰
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bHK[G]?\b|Hong.*?Kong|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b|[^-]港)"
+
+  - name: ♻️ 美 🇺🇲
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bUS[A]?\b|America|United.*?States|美国|[^-]美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥)"
+
+  - name: ♻️ 台 🇹🇼
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bTW[N]?\b|Taiwan|新北|彰化|\bCHT\b|台湾|[^-]台|\bHINET\b)"
+
+  - name: ♻️ 新 🇸🇬
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bSG[P]?\b|Singapore|新加坡|狮城|[^-]新)"
+
+  - name: ♻️ 日 🇯🇵
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bJP[N]?\b|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日)"
+
+  - name: ♻️ 韩 🇰🇷
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(?i:\bK[O]?R\b|Korea|首尔|韩|韓)"
+
+rules:
+  - GEOIP,private,DIRECT,no-resolve
+
+  - DOMAIN-SUFFIX,raw.githubusercontent.com,🚀 节点选择
+  - DOMAIN-SUFFIX,addons.mozilla.org,🚀 节点选择
+  - DOMAIN-SUFFIX,artifacts.bitwarden.com,🚀 节点选择
+  - DOMAIN-SUFFIX,c.mi.com,🚀 节点选择
+  - DOMAIN-KEYWORD,kemono,🚀 节点选择
+  - DOMAIN-SUFFIX,zaobao.com,🎯 全球直连
+  - DOMAIN-SUFFIX,zaobao.com.sg,🎯 全球直连
+
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Providers/Ruleset/GoogleFCM.yaml
+  - DOMAIN,alt1-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,alt2-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,alt3-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,alt4-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,alt5-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,alt6-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,alt7-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,alt8-mtalk.google.com,🔍 谷歌FCM
+  - DOMAIN,mtalk.google.com,🔍 谷歌FCM
+  - IP-CIDR,64.233.177.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,64.233.186.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,64.233.187.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,64.233.188.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,64.233.189.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.23.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.24.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.28.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.127.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.137.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.203.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.204.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,74.125.206.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,108.177.125.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,142.250.4.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,142.250.10.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,142.250.31.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,142.250.96.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,172.217.194.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,172.217.218.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,172.217.219.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,172.253.63.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,172.253.122.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,173.194.175.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,173.194.218.188/32,🔍 谷歌FCM,no-resolve
+  - IP-CIDR,209.85.233.188/32,🔍 谷歌FCM,no-resolve
+  - GEOSITE,googlefcm,🔍 谷歌FCM
+
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Providers/Ruleset/Bing.yaml
+  - DOMAIN-SUFFIX,bing.com,🚀 节点选择
+  - DOMAIN-SUFFIX,copilot.microsoft.com,🚀 节点选择
+  - DOMAIN-SUFFIX,onedrive.live.com,🚀 节点选择
+
+  - GEOSITE,category-ai-!cn,💬 AI平台
+  - GEOSITE,ehentai,💬 AI平台
+  - GEOSITE,bahamut,📺 巴哈姆特
+  - GEOSITE,tiktok,📺 TikTok
+
+  - DOMAIN-SUFFIX,iflya321.com,📺 Emby服务
+  - GEOSITE,category-emby,📺 Emby服务
+
+  - GEOSITE,bilibili,📺 哔哩哔哩
+  - GEOSITE,biliintl,📺 哔哩哔哩
+  
+  - GEOSITE,category-media,🌐 国际视听
+  - GEOSITE,category-entertainment,🌐 国际视听
+  - GEOSITE,google,🔍 谷歌服务
+  - GEOIP,google,🔍 谷歌服务
+  - GEOSITE,microsoft,Ⓜ️ 微软服务
+  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,gfw,🚀 节点选择
+
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Providers/Ruleset/Download.yaml
+  - DOMAIN-SUFFIX,smtp,🎯 全球直连
+  - DOMAIN-KEYWORD,aria2,🎯 全球直连
+
+  - GEOSITE,cn,🎯 全球直连
+  - GEOIP,cn,🎯 全球直连
+  - IN-TYPE,SOCKS/HTTP/HTTPS,🛤️ 类型匹配
+  - MATCH,🐟 其他漏鱼
