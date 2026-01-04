@@ -1,12 +1,31 @@
-Clash Meta 文档 https://wiki.metacubex.one
+mihomo
+
+https://wiki.metacubex.one
 
 https://wiki.metacubex.one/example/conf
+
+~~~
+clash meta IN-TYPE,SOCKS/HTTP,auto
+入站类型规则：表示来自某入站类型的流量怎么走规则，支持（HTTP/HTTPS/SOCKS/TUN/TPROXY/REDIR/INNER）
+~~~
+
+subconverter
 
 &exclude=%E9%99%90%E9%80%9F （限速）
 
 tg://http?server=127.0.0.1&port=8080&remarks=Music
 
 https://github.com/tindy2013/subconverter/blob/master/README-cn.md#外部配置
+
+Sub-Store
+
+https://github.com/sub-store-org/Sub-Store
+
+mihomo 覆写
+
+https://github.com/mihomo-party-org/override-hub
+
+规则片段
 
 https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash
 
@@ -31,10 +50,3 @@ https://github.com/jklolixxs/listes/blob/master/Clash/Ruleset/PlusEmbyProxy.ini
 https://github.com/LucaLin233/Luca_Conf/blob/main/QX/Luca_Emby.list
 
 https://github.com/lanzVw/Proxy_Config/blob/main/Clash/Emby.list
-
-~~~
-clash meta IN-TYPE,SOCKS/HTTP,auto
-入站类型规则：表示来自某入站类型的流量怎么走规则，支持（HTTP/HTTPS/SOCKS/TUN/TPROXY/REDIR/INNER）
-~~~
-
-https://github.com/mihomo-party-org/override-hub
