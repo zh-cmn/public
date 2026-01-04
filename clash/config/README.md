@@ -36,3 +36,5 @@ https://github.com/lanzVw/Proxy_Config/blob/main/Clash/Emby.list
 clash meta IN-TYPE,SOCKS/HTTP,auto
 入站类型规则：表示来自某入站类型的流量怎么走规则，支持（HTTP/HTTPS/SOCKS/TUN/TPROXY/REDIR/INNER）
 ~~~
+
+https://github.com/mihomo-party-org/override-hub
