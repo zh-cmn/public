@@ -1,0 +1,359 @@
+#Mind US*/UM flag changes and loops.
+proxy-groups:
+  #通用分组
+  - name: 🚀 节点选择
+    type: select
+    proxies: [🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+    include-all: true
+  - name: 💬 AI平台
+    type: select
+    proxies: [🇺🇸 美国节点,🚀 节点选择,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,🇭🇰 香港节点,♻️ 自动选择,📌 手动切换,DIRECT]
+    include-all: true
+  - name: 🔍 谷歌服务
+    type: select
+    proxies: [🇺🇸 美国节点,🚀 节点选择,🇭🇰 香港节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+    include-all: true
+  - name: 📺 油管服务
+    type: select
+    proxies: [🇺🇸 美国节点,🚀 节点选择,🇭🇰 香港节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+    include-all: true
+  - name: 📺 Emby服务
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+    include-all: true
+  - name: 📺 TikTok
+    type: select
+    proxies: [🇸🇬 狮城节点,🚀 节点选择,🇺🇸 美国节点,🧋 台湾节点,🇯🇵 日本节点,🇰🇷 韩国节点,🇭🇰 香港节点,♻️ 自动选择,📌 手动切换,DIRECT]
+    include-all: true
+  - name: 📺 巴哈姆特
+    type: select
+    proxies: [🧋 台湾节点,🇭🇰 香港节点,🚀 节点选择,🇺🇸 美国节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies: [DIRECT,🇭🇰 香港节点,🧋 台湾节点,🚀 节点选择,🇺🇸 美国节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+  - name: 🌐 国际媒体
+    type: select
+    proxies: [🚀 节点选择,🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+  - name: 🍎 苹果服务
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+  - name: 💵 PayPal
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+  - name: 🛤️ 类型匹配
+    type: select
+    proxies: [🚀 节点选择,🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换,DIRECT]
+  - name: 🐟 其他漏鱼
+    type: select
+    proxies: [DIRECT,🚀 节点选择,🇭🇰 香港节点,🇺🇸 美国节点,🧋 台湾节点,🇸🇬 狮城节点,🇯🇵 日本节点,🇰🇷 韩国节点,♻️ 自动选择,📌 手动切换]
+  - name: 🇨🇳 谷歌中国
+    type: select
+    proxies: [DIRECT,🚀 节点选择,📌 手动切换,♻️ 自动选择]
+  - name: 🎯 全球直连
+    type: select
+    proxies: [DIRECT,🚀 节点选择,📌 手动切换,♻️ 自动选择]
+  #地区分组
+  - name: 🇭🇰 香港节点
+    type: select
+    proxies: [♻️ 港 🇭🇰]
+    include-all: true
+    exclude-type: direct
+    filter: "(港|HK|hk|Hong Kong|HongKong|hongkong)"
+  - name: 🇺🇸 美国节点
+    type: select
+    proxies: [♻️ 美 🇺🇸]
+    include-all: true
+    exclude-type: direct
+    filter: "(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
+  - name: 🧋 台湾节点
+    type: select
+    proxies: [♻️ 台 🧋]
+    include-all: true
+    exclude-type: direct
+    filter: "(台|新北|彰化|TW|Taiwan)"
+  - name: 🇸🇬 狮城节点
+    type: select
+    proxies: [♻️ 新 🇸🇬]
+    include-all: true
+    exclude-type: direct
+    filter: "(新加坡|坡|狮城|SG|Singapore)"
+  - name: 🇯🇵 日本节点
+    type: select
+    proxies: [♻️ 日 🇯🇵]
+    include-all: true
+    exclude-type: direct
+    filter: "(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
+  - name: 🇰🇷 韩国节点
+    type: select
+    proxies: [♻️ 韩 🇰🇷]
+    include-all: true
+    exclude-type: direct
+    filter: "(KR|Korea|KOR|首尔|韩|韓)"
+  - name: 📌 手动切换
+    type: select
+    include-all: true
+    exclude-type: direct
+  #地区测速
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    tolerance: 10
+  - name: ♻️ 港 🇭🇰
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(港|HK|hk|Hong Kong|HongKong|hongkong)"
+  - name: ♻️ 美 🇺🇸
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
+  - name: ♻️ 台 🧋
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(台|新北|彰化|TW|Taiwan)"
+  - name: ♻️ 新 🇸🇬
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(新加坡|坡|狮城|SG|Singapore)"
+  - name: ♻️ 日 🇯🇵
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
+  - name: ♻️ 韩 🇰🇷
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    filter: "(KR|Korea|KOR|首尔|韩|韓)"
+
+rule-providers:
+  LocalAreaNetwork:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleFCM:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleCN:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/GoogleCN.list
+    path: ./ruleset/GoogleCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bing:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bing.list
+    path: ./ruleset/Bing.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  PayPal:
+    url: https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/PROXY/PayPal.list
+    path: ./ruleset/PayPal.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  AI:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/AI.list
+    path: ./ruleset/AI.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  OpenAi:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list
+    path: ./ruleset/OpenAi.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  EHGallery:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/EHGallery.list
+    path: ./ruleset/EHGallery.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  YouTube:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/YouTube.list
+    path: ./ruleset/YouTube.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  YouTubeMusic:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/YouTubeMusic.list
+    path: ./ruleset/YouTubeMusic.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  PlusEmbyProxy:
+    url: hhttps://cdn.jsdelivr.net/gh/jklolixxs/listes@master/Clash/Ruleset/PlusEmbyProxy.ini
+    path: ./ruleset/PlusEmbyProxy.ini
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bahamut:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bahamut.list
+    path: ./ruleset/Bahamut.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  TikTok:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/TikTok.list
+    path: ./ruleset/TikTok.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bilibili:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bilibili.list
+    path: ./ruleset/Bilibili.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BilibiliHMT:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/BilibiliHMT.list
+    path: ./ruleset/BilibiliHMT.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyMedia:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyMedia.list
+    path: ./ruleset/ProxyMedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Google:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Google.list
+    path: ./ruleset/Google.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleCNProxyIP:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/GoogleCNProxyIP.list
+    path: ./ruleset/GoogleCNProxyIP.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Microsoft:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Microsoft.list
+    path: ./ruleset/Microsoft.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Apple:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Apple.list
+    path: ./ruleset/Apple.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyGFWlist:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyGFWlist.list
+    path: ./ruleset/ProxyGFWlist.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  UnBan:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/UnBan.list
+    path: ./ruleset/UnBan.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaCompanyIp:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaCompanyIp.list
+    path: ./ruleset/ChinaCompanyIp.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaDomain:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list
+    path: ./ruleset/ChinaDomain.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaMedia:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaMedia.list
+    path: ./ruleset/ChinaMedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Download:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Download.list
+    path: ./ruleset/Download.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,GoogleFCM,🎯 全球直连
+  - RULE-SET,GoogleCN,🇨🇳 谷歌中国
+  - DOMAIN-SUFFIX,subweb.ccsub.site,🎯 全球直连
+  - DOMAIN-SUFFIX,zaobao.com,🎯 全球直连
+  - DOMAIN-SUFFIX,zaobao.com.sg,🎯 全球直连
+  - DOMAIN-KEYWORD,kemono,🚀 节点选择
+  - DOMAIN-SUFFIX,addons.mozilla.org,🚀 节点选择
+  - DOMAIN-SUFFIX,artifacts.bitwarden.com,🚀 节点选择
+  - DOMAIN-SUFFIX,c.mi.com,🚀 节点选择
+  - DOMAIN-SUFFIX,onedrive.live.com,🚀 节点选择
+  - RULE-SET,Bing,🚀 节点选择
+  - DOMAIN-SUFFIX,paypal.com,💵 PayPal
+  - RULE-SET,PayPal,💵 PayPal
+  - RULE-SET,AI,💬 AI平台
+  - RULE-SET,OpenAi,💬 AI平台
+  - RULE-SET,EHGallery,💬 AI平台
+  - RULE-SET,YouTube,📺 油管服务
+  - RULE-SET,YouTubeMusic,📺 油管服务
+  - DOMAIN-SUFFIX,iflya321.com,📺 Emby服务
+  - RULE-SET,PlusEmbyProxy,📺 Emby服务
+  - RULE-SET,Bahamut,📺 巴哈姆特
+  - RULE-SET,TikTok,📺 TikTok
+  - RULE-SET,Bilibili,📺 哔哩哔哩
+  - RULE-SET,BilibiliHMT,📺 哔哩哔哩
+  - RULE-SET,ProxyMedia,🌐 国际媒体
+  - RULE-SET,Google,🔍 谷歌服务
+  - RULE-SET,GoogleCNProxyIP,🔍 谷歌服务
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,ProxyGFWlist,🚀 节点选择
+  - RULE-SET,UnBan,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaMedia,🎯 全球直连
+  - RULE-SET,Download,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - IN-TYPE,SOCKS/HTTP/HTTPS,🛤️ 类型匹配
+  - MATCH,🐟 其他漏鱼
