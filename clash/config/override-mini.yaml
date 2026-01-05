@@ -60,19 +60,16 @@ proxy-groups:
     type: select
     proxies: [♻️ 港 🇭🇰]
     include-all: true
-    exclude-type: direct
     filter: "(港|HK|hk|Hong Kong|HongKong|hongkong)"
   - name: 🇺🇸 美国节点
     type: select
     proxies: [♻️ 美 🇺🇸]
     include-all: true
-    exclude-type: direct
     filter: "(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
   - name: 🧋 台湾节点
     type: select
     proxies: [♻️ 台 🧋]
     include-all: true
-    exclude-type: direct
     filter: "(台|新北|彰化|TW|Taiwan)"
   - name: 🇸🇬 狮城节点
     type: select
@@ -84,53 +81,42 @@ proxy-groups:
     type: select
     proxies: [♻️ 日 🇯🇵]
     include-all: true
-    exclude-type: direct
     filter: "(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
   - name: 🇰🇷 韩国节点
     type: select
     proxies: [♻️ 韩 🇰🇷]
     include-all: true
-    exclude-type: direct
     filter: "(KR|Korea|KOR|首尔|韩|韓)"
   - name: 📌 手动切换
     type: select
     include-all: true
-    exclude-type: direct
   #地区测速
   - name: ♻️ 自动选择
     type: url-test
     include-all: true
-    exclude-type: direct
-    tolerance: 10
   - name: ♻️ 港 🇭🇰
     type: url-test
     include-all: true
-    exclude-type: direct
     filter: "(港|HK|hk|Hong Kong|HongKong|hongkong)"
   - name: ♻️ 美 🇺🇸
     type: url-test
     include-all: true
-    exclude-type: direct
     filter: "(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
   - name: ♻️ 台 🧋
     type: url-test
     include-all: true
-    exclude-type: direct
     filter: "(台|新北|彰化|TW|Taiwan)"
   - name: ♻️ 新 🇸🇬
     type: url-test
     include-all: true
-    exclude-type: direct
     filter: "(新加坡|坡|狮城|SG|Singapore)"
   - name: ♻️ 日 🇯🇵
     type: url-test
     include-all: true
-    exclude-type: direct
     filter: "(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
   - name: ♻️ 韩 🇰🇷
     type: url-test
     include-all: true
-    exclude-type: direct
     filter: "(KR|Korea|KOR|首尔|韩|韓)"
 
 rule-providers:
