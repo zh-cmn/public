@@ -310,6 +310,7 @@ rules:
   - DOMAIN-SUFFIX,subweb.ccsub.site,🎯 全球直连
   - DOMAIN-SUFFIX,zaobao.com,🎯 全球直连
   - DOMAIN-SUFFIX,zaobao.com.sg,🎯 全球直连
+  - DOMAIN-SUFFIX,raw.githubusercontent.com,🚀 节点选择
   - DOMAIN-KEYWORD,kemono,🚀 节点选择
   - DOMAIN-SUFFIX,addons.mozilla.org,🚀 节点选择
   - DOMAIN-SUFFIX,artifacts.bitwarden.com,🚀 节点选择
