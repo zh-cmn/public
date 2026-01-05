@@ -1,9 +1,5 @@
 #Sub-Store
 #Mind US*/UM flag changes and loops.
-hosts:
-  c.mi.com: sgp.ali.i18n.lb.mi.com
-  mtalk.google.com: 74.125.200.188
-
 proxy-groups:
   #通用分组
   - name: 🚀 节点选择
