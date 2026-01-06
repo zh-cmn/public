@@ -319,6 +319,7 @@ rules:
   - RULE-SET,Bing,🚀 节点选择
   - DOMAIN-SUFFIX,paypal.com,💵 PayPal
   - RULE-SET,PayPal,💵 PayPal
+  - GEOSITE,paypal,💵 PayPal
   - RULE-SET,AI,💬 AI平台
   - RULE-SET,OpenAi,💬 AI平台
   - RULE-SET,EHGallery,💬 AI平台
@@ -326,6 +327,7 @@ rules:
   - RULE-SET,YouTubeMusic,📺 油管服务
   - DOMAIN-SUFFIX,iflya321.com,📺 Emby服务
   - RULE-SET,PlusEmbyProxy,📺 Emby服务
+  - GEOSITE,category-emby,📺 Emby服务
   - RULE-SET,Bahamut,📺 巴哈姆特
   - RULE-SET,TikTok,📺 TikTok
   - RULE-SET,Bilibili,📺 哔哩哔哩
