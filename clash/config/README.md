@@ -1,29 +1,30 @@
-mihomo
+mihomo 内核
 
 https://wiki.metacubex.one
 
-https://wiki.metacubex.one/example/conf
-
 ~~~
-clash meta IN-TYPE,SOCKS/HTTP,auto
+clash meta IN-TYPE,SOCKS/HTTP/HTTPS,auto
 入站类型规则：表示来自某入站类型的流量怎么走规则，支持（HTTP/HTTPS/SOCKS/TUN/TPROXY/REDIR/INNER）
 ~~~
 
-subconverter
-
-&exclude=%E9%99%90%E9%80%9F （限速）
+subconverter 规则转换
 
 tg://http?server=127.0.0.1&port=8080&remarks=Music
 
 https://github.com/tindy2013/subconverter/blob/master/README-cn.md#外部配置
 
-Sub-Store
+Sub-Store 订阅管理&简单覆写
 
 https://github.com/sub-store-org/Sub-Store
 
 mihomo 覆写
 
 https://github.com/mihomo-party-org/override-hub
+
+GEOSITE/IP 资源
+
+[MetaCubeX](https://github.com/MetaCubeX/meta-rules-dat) 数据同 [Loyalsoldier](https://github.com/Loyalsoldier/v2ray-rules-dat)，geosite.dat 基于 [v2fly](https://github.com/v2fly/domain-list-community) 数据
+
 
 规则片段
 
