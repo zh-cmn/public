@@ -11,7 +11,9 @@ subconverter 规则转换
 
 tg://http?server=127.0.0.1&port=8080&remarks=Music
 
-https://github.com/tindy2013/subconverter/blob/master/README-cn.md#外部配置
+原版 https://github.com/tindy2013/subconverter/blob/master/README-cn.md#外部配置
+
+Worker 版本 https://github.com/jwyGithub/sub-convert
 
 Sub-Store 订阅管理&简单覆写
 
