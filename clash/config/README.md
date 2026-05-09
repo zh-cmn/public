@@ -27,6 +27,7 @@ GEOSITE/IP 资源
 
 [MetaCubeX](https://github.com/MetaCubeX/meta-rules-dat) 数据同 [Loyalsoldier](https://github.com/Loyalsoldier/v2ray-rules-dat)，geosite.dat 基于 [v2fly](https://github.com/v2fly/domain-list-community) 数据
 
+https://github.com/DustinWin/ruleset_geodata
 
 规则片段
 
