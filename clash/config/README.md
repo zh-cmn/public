@@ -33,6 +33,8 @@ https://github.com/DustinWin/ruleset_geodata
 
 https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash
 
+https://github.com/DustinWin/ruleset_geodata/tree/mihomo-ruleset
+
 https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
 
 https://github.com/lhie1/Rules/tree/master/Surge/Surge%203/Provider
