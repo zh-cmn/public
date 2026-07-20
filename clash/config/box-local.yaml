@@ -206,14 +206,6 @@ rule-providers:
     path: ./rule_provider/google-fcm.list
     url: "https://ghfast.top/github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/GoogleFCM.list"
     proxy: DIRECT
-  steam:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    path: ./rule_provider/steam.list
-    url: "https://ghfast.top/github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Steam.list"
-    proxy: DIRECT
 
 rules:
   # 本机、局域网、私有地址直连
@@ -229,10 +221,6 @@ rules:
 
   - DST-PORT,53,DNS_Hijack
   - OR,((RULE-SET,google-fcm),(RULE-SET,microsoft-cn),(RULE-SET,apple-cn),(RULE-SET,google-cn)),DIRECT
-  - DOMAIN-SUFFIX,api.steampowered.com,PROXY
-  - DOMAIN-SUFFIX,store.steampowered.com,PROXY
-  - DOMAIN-SUFFIX,steamcommunity.com,PROXY
-  - RULE-SET,steam,DIRECT
   - RULE-SET,proxy_domain,PROXY
   - RULE-SET,global_ai,PROXY
   - OR,((RULE-SET,global_media),(RULE-SET,global_mediaip),(RULE-SET,telegramip)),PROXY
